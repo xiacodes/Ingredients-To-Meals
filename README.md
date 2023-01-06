@@ -1,2 +1,2 @@
-# Ingredients-To-Meals
+# Ingredients To Meals
 Ingredients to meal prep application  🥗
