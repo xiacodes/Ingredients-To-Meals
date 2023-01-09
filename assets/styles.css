@@ -8,10 +8,16 @@
     color: white;
 }
 
+#search-input {
+    width: max-content;
+    margin-bottom: 20px;
+}
+
 #save-button {
     background-color: #0197f6;
     color: white;
     width:max-content;
+    margin-left: 10px;
     margin-bottom: 20px;
 }
 
