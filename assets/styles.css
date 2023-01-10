@@ -41,3 +41,15 @@
     justify-content: right;
     padding-top: 70px;
 }
+
+.meal-selection-banner {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: 2px;
+    border-style: groove;
+    background-color: #e3fbe3;
+}
+
+.jumbotron {
+    background-color: #e3fbe3;
+}
