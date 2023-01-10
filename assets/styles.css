@@ -50,6 +50,11 @@
     background-color: #e3fbe3;
 }
 
+#meal-background-image {
+    width: 30%;
+    padding-left: 50px;
+}
+
 .jumbotron {
     background-color: #e3fbe3;
 }
