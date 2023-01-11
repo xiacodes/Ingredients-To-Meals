@@ -1,55 +1,79 @@
 .myFood-header {
-    background-color: forestgreen;
+	background-color: forestgreen;
 }
 
 .h1 {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    padding: 20px;
-    color: white;
+	font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+		"Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+	padding: 20px;
+	color: white;
 }
 
 #search-input {
-    width: max-content;
-    margin-bottom: 20px;
+	width: max-content;
+	margin-bottom: 20px;
 }
 
 #save-button {
-    background-color: #0197f6;
-    color: white;
-    width:max-content;
-    margin-left: 10px;
-    margin-bottom: 20px;
+	background-color: #0197f6;
+	color: white;
+	width: max-content;
+	margin-left: 10px;
+	margin-bottom: 20px;
 }
 
 #submit-button {
-    background-color: royalblue;
-    color: white;
-    width:max-content;
-    margin-bottom: 20px;
+	background-color: royalblue;
+	color: white;
+	width: max-content;
+	margin-bottom: 20px;
 }
 
 #cancel-button {
-    background-color: grey;
-    color: white;
-    width:max-content;
-    margin-bottom: 20px;
-
+	background-color: grey;
+	color: white;
+	width: max-content;
+	margin-bottom: 20px;
 }
 
-.user-action{
-    display: flex;
-    justify-content: right;
-    padding-top: 70px;
+.user-action {
+	display: flex;
+	justify-content: right;
+	padding-top: 70px;
 }
 
 .meal-selection-banner {
-    padding-top: 20px;
-    padding-bottom: 20px;
-    border-bottom: 2px;
-    border-style: groove;
-    background-color: #e3fbe3;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	border-bottom: 2px;
+	border-style: groove;
+	background-color: #e3fbe3;
+}
+#meal-background-image {
+	width: 40%;
+}
+.meal-banner {
+	text-align: center;
+	display: flex;
+	align-items: center;
+	margin: 0 auto;
+	width: 60%;
+	gap: 20px;
+}
+.my-4 {
+	margin-bottom: 1.5rem !important;
+	border: 1px solid #0000001a;
+	width: 90%;
+}
+#my-meal-banner {
+	font-size: 1.5em;
+	font-family: Georgia, "Times New Roman", Times, serif;
 }
 
 .jumbotron {
-    background-color: #e3fbe3;
+	background-color: #e3fbe3;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	padding: 30px;
 }
