@@ -121,3 +121,18 @@
 	gap: 30px;
 	align-items: center;
 }
+
+.closeIcon {
+	padding: 5px 10px;
+}
+
+.closeIcon:hover {
+	background-color: #f44336;
+	color: white;
+}
+
+ul {
+	margin-top: 0;
+	list-style: none;
+	padding: 0px;
+}
