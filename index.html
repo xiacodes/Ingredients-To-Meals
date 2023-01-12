@@ -52,34 +52,29 @@
 						What is in your kitchen?
 					</h2>
 					<div id="search-form" class="form">
-						<div class="form-inline form-group">
-							<div class="input-group">
-								<input
-									class="form-input kitchen-search"
-									type="text"
-									id="search-input"
-									placeholder="Enter an ingredient"
-									aria-labelledby="form-heading"
-									aria-controls="Food-form"
-									autocomplete="off"
-								/>
-								<button
-									class="btn search-button"
-									id="save-button"
-									aria-label="submit search"
-									onclick="addIngredient()"
-								>
-									Save
-								</button>
-							</div>
+						<div class="input-group">
+							<input
+								class="form-input kitchen-search"
+								type="text"
+								id="search-input"
+								placeholder="Enter an ingredient"
+								aria-labelledby="form-heading"
+								aria-controls="Food-form"
+								autocomplete="off"
+							/>
+							<button
+								class="btn search-button"
+								id="save-button"
+								aria-label="submit search"
+								onclick="addIngredient()"
+							>
+								Save
+							</button>
 						</div>
 					</div>
-					<div class="list-group" id="history"></div>
 
 					<!--Append previously entered ingredients to the ingredient view below as buttons-->
-					<div id="ingredients-view">
-						<ul id="ingredients-list"></ul>
-					</div>
+					<div id="ingredients-view"></div>
 				</aside>
 
 				<!--Section to highlight top meal category-->
