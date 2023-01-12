@@ -1,6 +1,8 @@
 // The variables
 var saveBtn = document.getElementById("save-button");
+var submitBtn = document.getElementById("submit-button");
 var textbox = document.getElementById("search-input");
+var ingredients = [];
 
 // If the user presses the ENTER key to add ingredient
 textbox.addEventListener("keypress", function (e) {
@@ -29,16 +31,26 @@ saveBtn.addEventListener("click", function () {
 
 	// Captialise the word
 	item.textContent = capitaliseWord(textbox.value);
+	ingredients.push(item.textContent);
 
 	//Clear the textbox afterwards
 	textbox.value = "";
 
 	// The delete button
-	var all_ingredients = document.querySelectorAll(".delete-btn");
-	for (var i = 0; i < all_ingredients.length; i++) {
-		all_ingredients[i].onclick = function () {
+	var allDeleteBtn = document.querySelectorAll(".delete-btn");
+	for (var i = 0; i < allDeleteBtn.length; i++) {
+		allDeleteBtn[i].onclick = function () {
 			this.parentNode.remove();
 		};
+	}
+
+	console.log(ingredients);
+});
+
+submitBtn.addEventListener("click", function () {
+	var allListedItems = document.querySelectorAll(".itemText").innerHTML;
+	for (var i = 0; i < allListedItems.length; i++) {
+		ingredients.push(allListedItems[i]);
 	}
 });
 
