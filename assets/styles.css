@@ -31,22 +31,20 @@
 	background-color: #58b458; /* Keeping to the theme */
 	color: white;
 	width: max-content;
-	margin-bottom: 20px;
 }
 #submit-button:hover {
 }
 
 #cancel-button {
-	background-color: rgb(163, 163, 163);
+	background-color: #a3a3a3;
 	color: white;
 	width: max-content;
-	margin-bottom: 20px;
 }
 
 .user-action {
 	display: flex;
 	justify-content: right;
-	padding-top: 70px;
+	margin-bottom: 30px;
 }
 
 .meal-selection-banner {
@@ -87,7 +85,8 @@
 .row {
 	justify-content: center;
 }
-.btn {
+.btn,
+.kitchen-search {
 	border-radius: 0.25rem !important;
 }
 
@@ -100,4 +99,28 @@
 }
 .kitchen-sec {
 	justify-content: flex-start;
+}
+
+.kitchen-search {
+	border: 2px solid #a3a3a3;
+	padding: 0 10px;
+	transition: 500ms;
+	outline: none;
+}
+.kitchen-search:focus {
+	border: 2px solid #58b458;
+}
+
+.search-button:hover {
+	box-shadow: 3px 3px #397639;
+}
+#cancel-button:hover {
+	box-shadow: 3px 3px #797979;
+}
+
+.user-action > span {
+	display: flex;
+	flex-direction: row;
+	gap: 30px;
+	align-items: center;
 }
