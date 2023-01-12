@@ -1,7 +1,11 @@
 // The variables
 var saveBtn = document.getElementById("save-button");
 var textbox = document.getElementById("search-input");
+var userTopCategories = [];
+var allIngredients = [];
 
+
+function renderSavedIngredients(){
 // If the user presses the ENTER key to add ingredient
 textbox.addEventListener("keypress", function (e) {
 	if (e.key === "Enter") {
@@ -42,6 +46,8 @@ saveBtn.addEventListener("click", function () {
 	}
 });
 
+}
+
 // Capitalises the first word of any word
 function capitaliseWord(x) {
 	var firstLetter = x.charAt(0).toUpperCase();
@@ -49,3 +55,19 @@ function capitaliseWord(x) {
 	x = firstLetter + remainder;
 	return x;
 }
+
+// Push user's preferred food category to an array
+function userCategoriesSelection (){
+    $('input[class="mealoption"]:checked').each(function() {
+       userTopCategories.push(this.value);
+     });
+
+}
+
+// Push all selected ingredients into an array
+function showIngredients() {
+    currentIngredient = $("#search-input").val();
+    allIngredients.push(currentIngredient);
+    renderSavedIngredients();
+}
+
