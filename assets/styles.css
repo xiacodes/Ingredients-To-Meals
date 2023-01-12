@@ -90,3 +90,14 @@
 .btn {
 	border-radius: 0.25rem !important;
 }
+
+.category-wrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 15px;
+}
+.kitchen-sec {
+	justify-content: flex-start;
+}
