@@ -1,107 +1,156 @@
 <!DOCTYPE html>
 <html lang="en-gb">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- Bootstrap 4.3 -->
+		<link
+			rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		/>
+		<!-- Font Awesome -->
+		<link
+			rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+		/>
+		<!-- Our stylesheet -->
+		<link rel="stylesheet" href="assets/styles.css" />
+		<!-- Favicon -->
+		<link
+			rel="shortcut icon"
+			href="https://emojis.wiki/emoji-pics/facebook/green-salad-facebook.png"
+			type="image/x-icon"
+		/>
+		<title>Ingredients To Meals</title>
+	</head>
 
+	<body>
+		<header class="container-fluid text-center text-white p-2 myFood-header">
+			<h1>INGREDIENTS TO MEALS</h1>
+		</header>
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Bootstrap 4.3 -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-    <!-- Our stylesheet -->
-    <link rel="stylesheet" href="assets/styles.css" />
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="https://emojis.wiki/emoji-pics/facebook/green-salad-facebook.png" type="image/x-icon">
-    <title>Ingredients To Meals</title>
-</head>
+		<!--max-width for ultra wide resolutions-->
+		<div class="container-fluid" style="max-width: 1400px">
+			<div class="jumbotron paragraph-border">
+				<h2 class="meal-banner">
+					<span id="my-meal-banner">Home Cooked, Restaurant Style!</span>
+					<img id="meal-background-image" src="images/food1.jpg" />
+				</h2>
+				<hr class="my-4" />
+				<span
+					><h5>
+						Enter a list of ingredients and get details of tasty restaurant
+						quality meals to prepare from the comfort of your home
+					</h5></span
+				>
+			</div>
 
+			<!--Ask user to enter ingredient in their kitchen using a text form-->
+			<div class="row">
+				<aside class="col-lg-6 pb-6 category-wrapper kitchen-sec">
+					<h2 id="form-heading" class="mt-1 h3 form-label">
+						What is in your kitchen?
+					</h2>
+					<form id="search-form" class="form">
+						<div class="form-inline form-group">
+							<div class="input-group">
+								<input
+									class="form-input kitchen-search"
+									type="text"
+									id="search-input"
+									placeholder="Enter an ingredient"
+									aria-labelledby="form-heading"
+									aria-controls="Food-form"
+									autocomplete="off"
+								/>
+								<div class="input-group-append">
+									<button
+										type="submit"
+										class="green-hover btn search-button"
+										id="save-button"
+										aria-label="submit search"
+									>
+										Save
+									</button>
+								</div>
+							</div>
+						</div>
+					</form>
+					<div class="list-group" id="history"></div>
 
-<body>
-    <header class="container-fluid text-center text-white p-2 myFood-header">
-        <h1>INGREDIENTS TO MEALS</h1>
-    </header>
+					<!--Append previously entered ingredients to the ingredient view below as buttons-->
+					<div id="ingredients-view"></div>
+				</aside>
 
-    <!--max-width for ultra wide resolutions-->
-    <div class="container-fluid" style="max-width: 1400px">
+				<!--Section to highlight top meal category-->
+				<div class="col-lg-6 pb-6 category-wrapper">
+					<h2>Top categories</h2>
+					<h5>(check all that applies)</h5>
 
-        <div class="jumbotron paragraph-border">
-            <h2 class="meal-banner"><span id="my-meal-banner">Home Cooked, Restaurant Style!</span>
-                <img id="meal-background-image" src="images/food1.jpg">
-            </h2>
-            <hr class="my-4">
-            <span><h5>Enter a list of ingredients and get details of tasty restaurant quality meals to prepare from the comfort of your home</h5></span>
-        </div>
-
-        <!--Ask user to enter ingredient in their kitchen using a text form-->
-        <div class="row">
-
-            <aside class="col-lg-6 pb-6 category-wrapper kitchen-sec">
-                <h2 id="form-heading" class="mt-1 h3 form-label">
-                    What is in your kitchen?
-                </h2>
-                <form id="search-form" class="form">
-                    <div class="form-inline form-group">
-                        <div class="input-group">
-                            <input class="form-input kitchen-search" type="text" id="search-input"
-                                placeholder="Enter an ingredient" aria-labelledby="form-heading"
-                                aria-controls="Food-form" autocomplete="off"/>
-                            <div class="input-group-append">
-                                <button type="submit" class="green-hover btn search-button " id="save-button"
-                                    aria-label="submit search">
-                                    Save
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </form>
-                <div class="list-group" id="history"></div>
-
-                <!--Append previously entered ingredients to the ingredient view below as buttons-->
-                <div id="ingredients-view"></div>
-            </aside>
-
-
-            <!--Section to highlight top meal category-->
-            <div class="col-lg-6 pb-6 category-wrapper">
-                
-                    <h2>Top categories</h2>
-                    <h5>(check all that applies)</h5>
-
-                    <!--Addition of checkbox for users to select meal option-->
-                    <section>
-                        <input type="checkbox" id="mealoption-one" value="kebabs" name="kebabs">
-                        <label for="kebabs"> Kebabs</label><br>
-                        <input type="checkbox" id="mealoption-two" value="desserts" name="desserts">
-                        <label for="desserts"> Desserts</label><br>
-                        <input type="checkbox" id="mealoption-three" value="chinese" name="chinese">
-                        <label for="chinese"> Chinese</label><br>
-                        <input type="checkbox" id="mealoption-four" value="pasta" name="pasta">
-                        <label for="pasta"> Pasta</label><br>
-                        <input type="checkbox" id="mealoption-five" value="seafood">
-                        <label for="seafood"> Seafood</label><br>
-                        <input type="checkbox" id="mealoption-six" value="other" name="other">
-                        <label for="other"> Other</label><br>
-                    </section>
-            </div>
-
-            <div class="user-action">
-                <span>
-                    <button type="submit" class="btn search-button" id="submit-button" aria-label="submit search">
-                        Submit
-                    </button>
-                    <button type="submit" class="btn search-button" id="cancel-button" aria-label="cancel search">
-                        Cancel
-                    </button>
-                </span>
-
-            </div>
-
-
-
-        </div>
-
-
-        <script src="assets/logic.js"></script>
-</body>
+					<!--Addition of checkbox for users to select meal option-->
+					<section>
+						<input
+							type="checkbox"
+							id="mealoption-one"
+							value="kebabs"
+							name="kebabs"
+						/>
+						<label for="kebabs"> Kebabs</label><br />
+						<input
+							type="checkbox"
+							id="mealoption-two"
+							value="desserts"
+							name="desserts"
+						/>
+						<label for="desserts"> Desserts</label><br />
+						<input
+							type="checkbox"
+							id="mealoption-three"
+							value="chinese"
+							name="chinese"
+						/>
+						<label for="chinese"> Chinese</label><br />
+						<input
+							type="checkbox"
+							id="mealoption-four"
+							value="pasta"
+							name="pasta"
+						/>
+						<label for="pasta"> Pasta</label><br />
+						<input type="checkbox" id="mealoption-five" value="seafood" />
+						<label for="seafood"> Seafood</label><br />
+						<input
+							type="checkbox"
+							id="mealoption-six"
+							value="other"
+							name="other"
+						/>
+						<label for="other"> Other</label><br />
+					</section>
+				</div>
+				<!-- The buttons -->
+				<div class="user-action">
+					<span>
+						<button
+							type="submit"
+							class="btn search-button"
+							id="submit-button"
+							aria-label="submit search"
+						>
+							Submit
+						</button>
+						<button
+							type="submit"
+							class="btn search-button"
+							id="cancel-button"
+							aria-label="cancel search"
+						>
+							Cancel
+						</button>
+					</span>
+				</div>
+			</div>
+		</div>
+		<script src="assets/logic.js"></script>
+	</body>
 </html>
