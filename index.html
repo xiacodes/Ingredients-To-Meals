@@ -56,6 +56,7 @@
                     <span>
                         <h4>Saved Ingredients</h4>
                     </span>
+                    <div id="enteredIngredients"></div>
                 </div>
             </aside>
 
@@ -67,23 +68,23 @@
                 </h2>
 
                 <!--Addition of checkbox for users to select meal option-->
-                <input type="checkbox" id="mealoption-one" value="kebabs">
-                <label for="vehicle1"> Kebabs</label><br>
-                <input type="checkbox" id="mealoption-two" value="desserts">
-                <label for="vehicle2"> Desserts</label><br>
-                <input type="checkbox" id="mealoption-three" value="chinese">
-                <label for="vehicle3"> Chinese</label><br>
-                <input type="checkbox" id="mealoption-four" value="pasta">
-                <label for="vehicle3"> Pasta</label><br>
-                <input type="checkbox" id="mealoption-five" value="seafood">
-                <label for="vehicle3"> Seafood</label><br>
-                <input type="checkbox" id="mealoption-six" value="other">
-                <label for="vehicle3"> Other</label><br>
+                <input type="checkbox" class="mealoption" value="kebabs">
+                <label for="checkbox1"> Kebabs</label><br>
+                <input type="checkbox" class="mealoption" value="desserts">
+                <label for="checkbox2"> Desserts</label><br>
+                <input type="checkbox" class="mealoption" value="chinese">
+                <label for="checkbox3"> Chinese</label><br>
+                <input type="checkbox" class="mealoption" value="pasta">
+                <label for="checkbox4"> Pasta</label><br>
+                <input type="checkbox" class="mealoption" value="seafood">
+                <label for="checkbox5"> Seafood</label><br>
+                <input type="checkbox" class="mealoption" value="other">
+                <label for="checkbox6"> Other</label><br>
 
             </div>
 
-            <div class="user-action">
-                <span>
+            <div class="user-action container-fluid">
+                <span class="user-selection">
                     <button type="submit" class="btn search-button" id="submit-button" aria-label="submit search">
                         Submit
                     </button>
@@ -98,7 +99,7 @@
 
         </div>
 
-
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="assets/logic.js"></script>
 </body>
 

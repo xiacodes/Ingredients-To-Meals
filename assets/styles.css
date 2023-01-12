@@ -13,7 +13,7 @@
     margin-bottom: 20px;
 }
 
-#save-button {
+#save-button, #go-back {
     background-color: #0197f6;
     color: white;
     width:max-content;
@@ -26,6 +26,7 @@
     color: white;
     width:max-content;
     margin-bottom: 20px;
+    margin: 5px;
 }
 
 #cancel-button {
@@ -33,13 +34,8 @@
     color: white;
     width:max-content;
     margin-bottom: 20px;
+    margin: 5px;
 
-}
-
-.user-action{
-    display: flex;
-    justify-content: right;
-    padding-top: 70px;
 }
 
 .meal-selection-banner {
@@ -57,4 +53,18 @@
 
 .jumbotron {
     background-color: #e3fbe3;
+}
+
+.ingredients-available {
+    width: auto;
+    height: auto;
+    background-color: #ececec;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin: 5px;
+}
+
+.user-selection {
+    display: flex;
+    justify-content: flex-end;
 }
