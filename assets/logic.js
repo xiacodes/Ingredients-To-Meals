@@ -18,7 +18,9 @@ saveBtn.addEventListener("click", function () {
 	ingredientContainer.appendChild(deleteBtn);
 	ingredientContainer.appendChild(item);
 	deleteBtn.innerHTML += '<i class="fa-solid fa-trash"></i>';
-	item.textContent = textbox.value;
+
+	// Captialise the word
+	item.textContent = capitaliseWord(textbox.value);
 
 	//Clear the textbox afterwards
 	textbox.value = "";
@@ -31,3 +33,11 @@ saveBtn.addEventListener("click", function () {
 		};
 	}
 });
+
+// Capitalises the first word of any word
+function capitaliseWord(x) {
+	var firstLetter = x.charAt(0).toUpperCase();
+	var remainder = x.substring(1);
+	x = firstLetter + remainder;
+	return x;
+}
