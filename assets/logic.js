@@ -1,6 +1,8 @@
+// The variables
 var saveBtn = document.getElementById("save-button");
 var textbox = document.getElementById("search-input");
 
+// The save button
 saveBtn.addEventListener("click", function () {
 	//The variables
 	var ingredientContainer = document.createElement("div");

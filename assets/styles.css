@@ -1,47 +1,27 @@
+/* MISC */
+.user-action {
+	display: flex;
+	justify-content: right;
+	margin: 30px 0;
+}
+.row {
+	justify-content: center;
+}
+.btn,
+.kitchen-search {
+	border-radius: 0.25rem !important;
+}
+
+/* THE TOP PART OF PAGE */
 .myFood-header {
 	background-color: forestgreen;
 }
-
 .h1 {
 	font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
 		"Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 	padding: 20px;
 	color: white;
 }
-
-#search-input {
-	width: max-content;
-	margin-bottom: 20px;
-}
-.search-button {
-	background-color: #e3fbe3;
-}
-
-#save-button {
-	background-color: #58b458;
-	color: white;
-	width: max-content;
-	margin-left: 10px;
-	margin-bottom: 20px;
-}
-
-#submit-button {
-	background-color: #58b458; /* Keeping to the theme */
-	color: white;
-	width: max-content;
-}
-#cancel-button {
-	background-color: #a3a3a3;
-	color: white;
-	width: max-content;
-}
-
-.user-action {
-	display: flex;
-	justify-content: right;
-	margin: 30px 0;
-}
-
 .meal-selection-banner {
 	padding-top: 20px;
 	padding-bottom: 20px;
@@ -69,7 +49,6 @@
 	font-size: 1.5em;
 	font-family: Georgia, "Times New Roman", Times, serif;
 }
-
 .jumbotron {
 	background-color: #e3fbe3;
 	text-align: center;
@@ -77,14 +56,13 @@
 	flex-direction: column;
 	padding: 30px;
 }
-.row {
-	justify-content: center;
-}
-.btn,
-.kitchen-search {
-	border-radius: 0.25rem !important;
+
+#search-input {
+	width: max-content;
+	margin-bottom: 20px;
 }
 
+/* INGREDIENTS USER INPUT PART */
 .category-wrapper {
 	display: flex;
 	flex-direction: column;
@@ -95,7 +73,6 @@
 .kitchen-sec {
 	justify-content: flex-start;
 }
-
 .kitchen-search {
 	border: 2px solid #a3a3a3;
 	padding: 0 10px;
@@ -105,7 +82,62 @@
 .kitchen-search:focus {
 	border: 2px solid #58b458;
 }
+.user-action > span {
+	display: flex;
+	flex-direction: row;
+	gap: 30px;
+	align-items: center;
+}
 
+/* THE INGREDIENTS LIST */
+.ingredientContainer {
+	display: flex;
+	align-items: center;
+	gap: 15px;
+}
+.itemText {
+	margin: 0;
+	font-size: 1.1em;
+}
+#ingredients-view {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	align-items: flex-start;
+	width: 50%;
+	margin-bottom: 35px;
+}
+
+/* TOP CATEGORIES PART */
+section > label {
+	font-size: 1.1em;
+	margin-left: 10px;
+}
+input[type="checkbox"] {
+	transform: scale(1.2);
+}
+
+/* ALL THE BUTTONS */
+.search-button {
+	background-color: #e3fbe3;
+}
+#save-button {
+	background-color: #58b458;
+	color: white;
+	width: max-content;
+	margin-left: 10px;
+	margin-bottom: 20px;
+}
+#submit-button {
+	background-color: #58b458; /* Keeping to the theme */
+	color: white;
+	width: max-content;
+}
+#cancel-button {
+	background-color: #a3a3a3;
+	color: white;
+	width: max-content;
+}
 .search-button:hover,
 .search-button:focus {
 	box-shadow: 3px 3px #397639;
@@ -114,14 +146,6 @@
 #cancel-button:focus {
 	box-shadow: 3px 3px #797979;
 }
-
-.user-action > span {
-	display: flex;
-	flex-direction: row;
-	gap: 30px;
-	align-items: center;
-}
-
 .delete-btn {
 	background-color: #e87a72;
 	color: #fff;
@@ -137,33 +161,4 @@
 	outline: none;
 	background-color: #dd5147;
 	box-shadow: 3px 3px #981e16;
-}
-
-.ingredientContainer {
-	display: flex;
-	align-items: center;
-	gap: 15px;
-}
-
-.itemText {
-	margin: 0;
-	font-size: 1.1em;
-}
-
-#ingredients-view {
-	display: flex;
-	flex-direction: column;
-	gap: 20px;
-	align-items: flex-start;
-	width: 50%;
-	margin-bottom: 35px;
-}
-
-section > label {
-	font-size: 1.1em;
-	margin-left: 10px;
-}
-
-input[type="checkbox"] {
-	transform: scale(1.2);
 }
