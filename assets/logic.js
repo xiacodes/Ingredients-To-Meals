@@ -43,15 +43,15 @@ saveBtn.addEventListener("click", function () {
 			this.parentNode.remove();
 		};
 	}
-
-	console.log(ingredients);
 });
 
 submitBtn.addEventListener("click", function () {
-	var allListedItems = document.querySelectorAll(".itemText").innerHTML;
-	for (var i = 0; i < allListedItems.length; i++) {
-		ingredients.push(allListedItems[i]);
-	}
+	var allListedItems = document.querySelectorAll(".itemText");
+	// for (var i = 0; i < allListedItems.length; i++) {
+	// 	ingredients.push(allListedItems[i]);
+	// }
+	// console.log(ingredients);
+	alert(allListedItems.innerHTML);
 });
 
 // Capitalises the first word of any word
