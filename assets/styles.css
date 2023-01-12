@@ -117,6 +117,25 @@ input[type="checkbox"] {
 	transform: scale(1.2);
 }
 
+/* FOOTER */
+footer {
+	width: 100%;
+	padding: 10px 0;
+	background-color: forestgreen;
+	color: white;
+	margin-top: 20px;
+	text-align: center;
+}
+footer > p {
+	margin: 0;
+}
+p > a {
+	color: rgb(255, 250, 183);
+}
+p > a:hover {
+	color: #ffbeaa;
+}
+
 /* ALL THE BUTTONS */
 .search-button {
 	background-color: #e3fbe3;
