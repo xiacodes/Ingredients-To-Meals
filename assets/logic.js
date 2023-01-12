@@ -2,6 +2,7 @@ var saveBtn = document.getElementById("save-button");
 var textbox = document.getElementById("search-input");
 
 saveBtn.addEventListener("click", function () {
+	//The variables
 	var ingredientContainer = document.createElement("div");
 	var deleteBtn = document.createElement("button");
 	var item = document.createElement("p");
@@ -19,4 +20,12 @@ saveBtn.addEventListener("click", function () {
 
 	//Clear the textbox afterwards
 	textbox.value = "";
+
+	// The delete button
+	var all_ingredients = document.querySelectorAll(".delete-btn");
+	for (var i = 0; i < all_ingredients.length; i++) {
+		all_ingredients[i].onclick = function () {
+			this.parentNode.remove();
+		};
+	}
 });
