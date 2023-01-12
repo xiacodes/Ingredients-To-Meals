@@ -14,8 +14,8 @@ var closeOff = document.getElementsByClassName("closeIcon");
 var i;
 for (i = 0; i < closeOff.length; i++) {
 	closeOff[i].onclick = function () {
-		var div = this.parentElement;
-		div.style.display = "none";
+		// var div = this.parentElement;
+		closeOff.style.display = "none";
 	};
 }
 
