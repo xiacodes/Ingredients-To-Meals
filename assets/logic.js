@@ -2,6 +2,14 @@
 var saveBtn = document.getElementById("save-button");
 var textbox = document.getElementById("search-input");
 
+// If the user presses the ENTER key to add ingredient
+textbox.addEventListener("keypress", function (e) {
+	if (e.key === "Enter") {
+		// Trigger the button element with a click
+		saveBtn.click();
+	}
+});
+
 // The save button
 saveBtn.addEventListener("click", function () {
 	//The variables
