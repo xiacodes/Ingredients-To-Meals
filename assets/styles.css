@@ -13,9 +13,13 @@
 	width: max-content;
 	margin-bottom: 20px;
 }
+.search-button {
+	background-color: #e3fbe3;
+}
 
 #save-button {
-	background-color: #0197f6;
+	/* background-color: #0197f6; */
+	background-color: #58b458;
 	color: white;
 	width: max-content;
 	margin-left: 10px;
@@ -23,14 +27,17 @@
 }
 
 #submit-button {
-	background-color: royalblue;
+	/* background-color: royalblue; */
+	background-color: #58b458; /* Keeping to the theme */
 	color: white;
 	width: max-content;
 	margin-bottom: 20px;
 }
+#submit-button:hover {
+}
 
 #cancel-button {
-	background-color: grey;
+	background-color: rgb(163, 163, 163);
 	color: white;
 	width: max-content;
 	margin-bottom: 20px;
@@ -76,4 +83,10 @@
 	display: flex;
 	flex-direction: column;
 	padding: 30px;
+}
+.row {
+	justify-content: center;
+}
+.btn {
+	border-radius: 0.25rem !important;
 }
