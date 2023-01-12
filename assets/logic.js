@@ -4,61 +4,57 @@ var submitBtn = document.getElementById("submit-button");
 var textbox = document.getElementById("search-input");
 var userTopCategories = [];
 var allIngredients = [];
-=======
+// =======
 
+function renderSavedIngredients() {
+	// If the user presses the ENTER key to add ingredient
+	textbox.addEventListener("keypress", function (e) {
+		if (e.key === "Enter") {
+			// Trigger the button element with a click
+			saveBtn.click();
+		}
+	});
 
-function renderSavedIngredients(){
+	// The save button
+	saveBtn.addEventListener("click", function () {
+		//The variables
+		var ingredientContainer = document.createElement("div");
+		var deleteBtn = document.createElement("button");
+		var item = document.createElement("p");
 
-// If the user presses the ENTER key to add ingredient
-textbox.addEventListener("keypress", function (e) {
-	if (e.key === "Enter") {
-		// Trigger the button element with a click
-		saveBtn.click();
-	}
-});
+		//Adding the classes for styling purposes
+		ingredientContainer.setAttribute("class", "ingredientContainer");
+		deleteBtn.setAttribute("class", "delete-btn");
+		item.setAttribute("class", "itemText");
 
-// The save button
-saveBtn.addEventListener("click", function () {
-	//The variables
-	var ingredientContainer = document.createElement("div");
-	var deleteBtn = document.createElement("button");
-	var item = document.createElement("p");
+		document
+			.getElementById("ingredients-view")
+			.appendChild(ingredientContainer);
+		ingredientContainer.appendChild(deleteBtn);
+		ingredientContainer.appendChild(item);
+		deleteBtn.innerHTML += '<i class="fa-solid fa-trash"></i>';
 
-	//Adding the classes for styling purposes
-	ingredientContainer.setAttribute("class", "ingredientContainer");
-	deleteBtn.setAttribute("class", "delete-btn");
-	item.setAttribute("class", "itemText");
+		// Captialise the word
+		item.textContent = capitaliseWord(textbox.value);
+		// ingredients.push(item.textContent);
 
-	document.getElementById("ingredients-view").appendChild(ingredientContainer);
-	ingredientContainer.appendChild(deleteBtn);
-	ingredientContainer.appendChild(item);
-	deleteBtn.innerHTML += '<i class="fa-solid fa-trash"></i>';
+		//Clear the textbox afterwards
+		textbox.value = " ";
 
-	// Captialise the word
-	item.textContent = capitaliseWord(textbox.value);
-	ingredients.push(item.textContent);
+		// The delete button
+		var allDeleteBtn = document.querySelectorAll(".delete-btn");
+		for (var i = 0; i < allDeleteBtn.length; i++) {
+			allDeleteBtn[i].onclick = function () {
+				this.parentNode.remove();
+			};
+		}
+	});
 
-	//Clear the textbox afterwards
-	textbox.value = "";
-
-	// The delete button
-	var allDeleteBtn = document.querySelectorAll(".delete-btn");
-	for (var i = 0; i < allDeleteBtn.length; i++) {
-		allDeleteBtn[i].onclick = function () {
-			this.parentNode.remove();
-		};
-	}
-});
-
-submitBtn.addEventListener("click", function () {
-	var allListedItems = document.querySelectorAll(".itemText");
-	// for (var i = 0; i < allListedItems.length; i++) {
-	// 	ingredients.push(allListedItems[i]);
-	// }
-	// console.log(ingredients);
-	alert(allListedItems.innerHTML);
-});
-
+	// The submit button
+	submitBtn.addEventListener("click", function () {
+		showIngredients();
+		userCategoriesSelection();
+	});
 }
 
 // Capitalises the first word of any word
@@ -70,17 +66,16 @@ function capitaliseWord(x) {
 }
 
 // Push user's preferred food category to an array
-function userCategoriesSelection (){
-    $('input[class="mealoption"]:checked').each(function() {
-       userTopCategories.push(this.value);
-     });
-
+function userCategoriesSelection() {
+	$('input[class="mealoption"]:checked').each(function () {
+		userTopCategories.push(this.value);
+	});
 }
 
 // Push all selected ingredients into an array
 function showIngredients() {
-    currentIngredient = $("#search-input").val();
-    allIngredients.push(currentIngredient);
-    renderSavedIngredients();
+	currentIngredient = document.querySelectorAll(".itemText").textContent;
+	allIngredients.push(currentIngredient);
+	alert(currentIngredient);
 }
-
+renderSavedIngredients();
