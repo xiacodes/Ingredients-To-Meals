@@ -13,7 +13,7 @@ Welcome to Ingredients To Meals, the meal prep application! The application deve
 - [Credits](https://github.com/xiacodes/Ingredients-To-Meals/edit/main/README.md#credits)
 
 ## Screenshot 🥪
-![image of the application completed](url)
+![image of the application completed](images/screenshot.png)
 
 ## The Application 🌮
 How the application works is that once the user has entered this raw indgredients information, the application will use third party application programming interfaces (APIs) to search for possible recipes and meal ideas that can be made using the ingredients the user has indicated they have available. 
@@ -37,4 +37,4 @@ To use Ingredients To Meals, simply follow these steps:
 - A modern web browser is recommended for the best user experience.
 
 ## Credits 🍵
-*Ingredients To Meals* was developed by Christina, Roop and myself. The application uses a third party API to search for recipes and provide meal ideas. Thank you to [names of the API Providers inserted here as links] for their valuable contribution to this project.
+*Ingredients To Meals* was developed by Christina and myself. The application uses a third party API to search for recipes and provide meal ideas. Thank you to [names of the API Providers inserted here as links] for their valuable contribution to this project.
