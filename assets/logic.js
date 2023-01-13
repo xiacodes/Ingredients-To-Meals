@@ -1,61 +1,12 @@
 var APIspoonacular = "967014ffb258432b8a611d3960cb39de";
 var allIngredients = [];
-var userTopCategories = [];
 var currentIngredient;
 
 
-// Function to show ingredients
-function showIngredients() {
-    currentIngredient = $("#search-input").val();
-    allIngredients.push(currentIngredient);
-    renderSavedIngredients();
-}
-
-function userCategoriesSelection() {
-    var selection = $(".mealoption").val();
-    $('input[class="mealoption"]:checked').each(function () {
-        userTopCategories.push(this.value);
-    });
-
-}
-
-
-// Create a function to show the entered ingredients on the screen
-function renderSavedIngredients() {
-    // Clearing out existing list of ingredients to avoid repetition
-    $("#enteredIngredients").empty();
-
-    // Add list of saved ingredients entered to a list 
-    for (var i = 0; i < allIngredients.length; i++) {
-
-        // create a button to hold ingredients 
-        var createButton = $("<button>");
-        createButton.addClass("ingredients-available");
-        createButton.attr("data-name", allIngredients[i]);
-        createButton.text(allIngredients[i]);
-        $("#enteredIngredients").append(createButton);
-    }
-}
-
-
-// Function to generate meal suggestions 
-/* Image size = 
-90x90
-312x231
-636x393
-
-example: https://spoonacular.com/productImages/35507-636x393.jpg
-
-// Sample URL to find ingredients on Spoonacular
-https://api.spoonacular.com/recipes/findByIngredients?ingredients=apples,+flour,+sugar&number=2
-
-// For Spoonacular
-
-For API Ninjas
-
-*/
+// API Calls
 
 function generateMealSuggestion() {
+    allIngredients = JSON.parse(localStorage.getItem("myIngredients"));
     var ingredients = "";
     for (var i = 0; i < allIngredients.length; i++) {
         ingredients = ingredients + allIngredients[i] + ",+";
@@ -66,10 +17,14 @@ function generateMealSuggestion() {
     var FoodNutInfoURL = "https://food-nutrition-information.p.rapidapi.com/foods/search?query="
 
     // image for food suggestion 
-    var foodName;
-    var usedIngredient;
-    var usedIngredientTwo;
-    var imageURL;
+    var foodName; //Name of suggested meal
+    var usedIngredient; // First ingredient
+    var usedIngredientTwo; // Second ingredient
+    var imageURL; // Image URL
+    var quantity; // Quantity of ingredients used
+    var servings; // Servings of meal portion
+    var cookingInstructions;
+    var nutrients = [];
 
     // Spoonacular Items 
     $.ajax({
@@ -96,8 +51,11 @@ function generateMealSuggestion() {
         };
 
 
-        $.ajax(settingsNinja).then(function (response) {
-            console.log(response);
+        $.ajax(settingsNinja).then(function (responseTwo) {
+            quantity = responseTwo[0].ingredients;
+            servings = responseTwo[0].servings;
+            cookingInstructions = responseTwo[0].instructions;
+            console.log(responseTwo);
 
             // Food Nutrition Information 
             const settingsFNI = {
@@ -112,41 +70,67 @@ function generateMealSuggestion() {
             };
 
             $.ajax(settingsFNI).done(function (data) {
+                for (var i = 0; i < 7; i++) {
+                    var nutrientValue = data.foods[0].foodNutrients[i].nutrientName;
+                    nutrients.push(nutrientValue);
+                }
+
                 console.log(data);
+                //Create ingredients and append to page
+                var createListOne = $("<li>");
+                var createListTwo = $("<li>");
+                createListOne.text(usedIngredient);
+                createListTwo.text(usedIngredientTwo);
+                $('#ingredient-list').append(createListOne);
+                $('#ingredient-list').append(createListTwo);
+
+
+                // Preparation Instructions and append to HTML
+
+                // Append meal name to page
+                $("#text-suggested-meal").text(foodName);
+
+                // Meal image
+                $("#image-suggested-meal").attr("src", imageURL);
+
+                // Quantity
+                $("#ingredient-quantity").text(quantity);
+
+                // Servings 
+                $("#meal-servings").text(servings);
+
+                //Cooking instructions
+                $("#how-to-prep").text(cookingInstructions);
+
+                //Nutritional value
+
+                for (var i = 0; i < nutrients; i++) {
+                    var createSecondList = $("<li>");
+                    createSecondList.addClass("your-nutrients");
+                    createSecondList.attr("data-name", nutrients[i]);
+                    createSecondList.text(nutrients[i]);
+                    $("#individual-nutrients").append(createSecondList);
+
+                }
+
+
+
             });
 
         });
 
     })
 
-    ////////////////////////////////////
 
-    //Create ingredients and append to page
-    var createListOne = $("<li>");
-    var createListTwo = $("<li>");
-    createListOne.text(usedIngredient);
-    createListTwo.text(usedIngredientTwo);
-    $('#ingredient-list').append(createListOne);
-    $('#ingredient-list').append(createListTwo);
-
-
-    // Preparation Instructions and append to HTML
-    
 
 }
 
-// Event listener to add ingredients from user 
-$("#save-button").on("click", function (e) {
-    e.preventDefault();
-    showIngredients();
-});
 
-//Event listener for when user clicks submit 
-$("#submit-button").on("click", function (e) {
+// //Event listener for when user clicks submit 
+$("#show-result").on("click", function (e) {
     e.preventDefault();
     generateMealSuggestion();
-    userCategoriesSelection();
-    //  location.href = "suggestions.html";
 })
+
 
 
